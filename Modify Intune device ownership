@@ -1,0 +1,7 @@
+Install-Module -Name Microsoft.Graph.Intune
+
+Import-Module Microsoft.Graph.Intune
+
+Connect-MSGraph
+
+Get-IntuneManagedDevice | where operatingsystem -eq windows | where managedDeviceOwnerType -eq personal | Update-IntuneManagedDevice -managedDeviceOwnerType company
